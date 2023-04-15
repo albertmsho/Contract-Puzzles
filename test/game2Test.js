@@ -13,6 +13,9 @@ describe('Game2', function () {
     const { game } = await loadFixture(deployContractAndSetVariables);
 
     // press all the right switches to win this stage
+    await game.switchOn(20);
+    await game.switchOn(47);
+    await game.switchOn(212);
 
     await game.win();
 
@@ -20,3 +23,8 @@ describe('Game2', function () {
     assert(await game.isWon(), 'You did not win the game');
   });
 });
+
+/*
+  Game2
+    ✔ should be a winner (2504ms)
+*/
